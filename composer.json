@@ -21,5 +21,11 @@
         "psr-0": { "Wrep\\FOSUserBundleMandrillMailer": "" }
     },
     "target-dir": "Wrep/FOSUserBundleMandrillMailer",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/wrep/HipMandrillBundle"
+        }
+    ]
 }
