@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * This is the class that loads and manages your bundle configuration
  */
-class FOSUserBundleMailerExtension extends Extension
+class FOSUserBundleMandrillMailerExtension extends Extension
 {
     /**
      * {@inheritDoc}
