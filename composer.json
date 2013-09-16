@@ -1,0 +1,25 @@
+{
+    "name": "wrep/fosuserbundle-mandrill-mailer",
+    "type": "symfony-bundle",
+    "description": "Symfony FOSUserBundle mailer for Mandrill",
+    "keywords": ["Mandrill", "transaction mail", "transactional", "messages", "email", "FOS", "User bundle"],
+    "homepage": "https://github.com/wrep/FOSUserBundleMandrillMailer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rick Pastoor",
+            "email": "rick@wrep.nl",
+            "homepage": "http://wrep.nl/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*",
+        "hipaway-travel/mandrill-bundle": "dev-feature/subaccount"
+    },
+    "autoload": {
+        "psr-0": { "Wrep\\FOSUserBundleMandrillMailer": "" }
+    },
+    "target-dir": "Wrep/FOSUserBundleMandrillMailer",
+    "minimum-stability": "dev"
+}
