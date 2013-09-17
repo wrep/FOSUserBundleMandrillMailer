@@ -128,6 +128,7 @@ class FOSUserBundleMailer implements MailerInterface
 		$this->message->addTo($toEmail);
 		$this->message->setSubject($subject);
 		$this->message->setText($body);
+		$this->message->setTrackClicks(false);
 
 		$this->dispatcher->send($this->message);
 	}
