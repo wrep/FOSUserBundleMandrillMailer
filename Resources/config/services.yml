@@ -5,6 +5,7 @@ parameters:
 services:
     wrep.hip_mandrill.message:
         class: %wrep.hip_mandrill.dispatcher.class%
+        scope: prototype
 
     wrep.fosuserbundlemandrillmailer:
          class: %wrep.fosuserbundlemandrillmailer.class%
