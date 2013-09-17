@@ -9,6 +9,7 @@ services:
 
     wrep.fosuserbundlemandrillmailer:
          class: %wrep.fosuserbundlemandrillmailer.class%
+         scope: prototype
          arguments:
              - @router
              - @templating
