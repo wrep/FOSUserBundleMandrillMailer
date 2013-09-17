@@ -124,7 +124,7 @@ class FOSUserBundleMailer implements MailerInterface
 			);
 		}
 
-		// Send message via postmark
+		// Send message via Mandrill
 		$this->message->addTo($toEmail);
 		$this->message->setSubject($subject);
 		$this->message->setText($body);
