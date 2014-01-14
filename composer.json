@@ -15,17 +15,11 @@
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.*",
-        "hipaway-travel/mandrill-bundle": "dev-feature/subaccount"
+        "hipaway-travel/mandrill-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "Wrep\\FOSUserBundleMandrillMailer": "" }
     },
     "target-dir": "Wrep/FOSUserBundleMandrillMailer",
-    "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/wrep/HipMandrillBundle"
-        }
-    ]
+    "minimum-stability": "dev"
 }
