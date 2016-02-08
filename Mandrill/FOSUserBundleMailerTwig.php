@@ -109,37 +109,6 @@ class FOSUserBundleMailerTwig implements MailerInterface
     }
 
     /**
-     * This will configure the message and send it
-     *
-     * @param string    $renderedTemplate
-     * @param string    $toEmail
-     */
-    protected function sendEmailMessage($renderedTemplate, $toEmail)
-    {
-        // Split subject and body
-        $renderedLines = explode("\n", trim($renderedTemplate));
-        $subject = $renderedLines[0];
-        $body = implode("\n", array_slice($renderedLines, 1));
-
-        // Check e-mail content
-        if (strlen($body) == 0 || strlen($subject) == 0) {
-            throw new \RuntimeException(
-                    "No message was found, cannot send e-mail to " . $toEmail . ". This " .
-                    "error can occur when you don't have set a confirmation template or using the default " .
-                    "without having translations enabled."
-            );
-        }
-
-        // Send message via Mandrill
-        $this->message->addTo($toEmail);
-        $this->message->setSubject($subject);
-        $this->message->setText($body);
-        $this->message->setTrackClicks(false);
-
-        $this->dispatcher->send($this->message);
-    }
-
-    /**
      * @param string $templateName
      * @param array  $context
      * @param string $toEmail
