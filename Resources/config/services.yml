@@ -16,7 +16,7 @@ services:
              - @wrep.hip_mandrill.message
              - { confirmation.template: %fos_user.registration.confirmation.template%, resetting_password.template: %fos_user.resetting.email.template% }
 
-    wrep.fosuserbundlemandrillmailer:
+    wrep.fosuserbundlemandrillmailertwig:
          class: %wrep.fosuserbundlemandrillmailertwig.class%
          arguments:
              - @router
