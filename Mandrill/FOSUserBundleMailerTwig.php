@@ -104,7 +104,6 @@ class FOSUserBundleMailerTwig implements MailerInterface
             'confirmationUrl' => $url
         );
 
-        // $this->sendMessage($template, $context, $this->parameters['from_email']['resetting'], $user->getEmail());
         $this->sendMessage($template, $context, $user->getEmail());
     }
 
@@ -142,10 +141,8 @@ class FOSUserBundleMailerTwig implements MailerInterface
     /**
      * @param string $templateName
      * @param array  $context
-     * @param string $fromEmail
      * @param string $toEmail
      */
-    // protected function sendMessage($templateName, $context, $fromEmail, $toEmail)
     protected function sendMessage($templateName, $context, $toEmail)
     {
         $context = $this->twig->mergeGlobals($context);
@@ -156,7 +153,6 @@ class FOSUserBundleMailerTwig implements MailerInterface
 
         // Send message via Mandrill
         $this->message->addTo($toEmail);
-        // $this->message->setFromEmail($fromEmail);
         $this->message->setSubject($subject);
         $this->message->setTrackClicks(false);
         $this->message->setText($textBody);
