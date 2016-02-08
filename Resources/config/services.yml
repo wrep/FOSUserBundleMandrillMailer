@@ -1,5 +1,6 @@
 parameters:
     wrep.fosuserbundlemandrillmailer.class: Wrep\FOSUserBundleMandrillMailer\Mandrill\FOSUserBundleMailer
+    wrep.fosuserbundlemandrillmailertwig.class: Wrep\FOSUserBundleMandrillMailer\Mandrill\FOSUserBundleMailerTwig
     wrep.hip_mandrill.dispatcher.class: Hip\MandrillBundle\Message
 
 services:
@@ -13,4 +14,14 @@ services:
              - @templating
              - @hip_mandrill.dispatcher
              - @wrep.hip_mandrill.message
+             - { confirmation.template: %fos_user.registration.confirmation.template%, resetting_password.template: %fos_user.resetting.email.template% }
+
+    wrep.fosuserbundlemandrillmailertwig:
+         class: %wrep.fosuserbundlemandrillmailertwig.class%
+         arguments:
+             - @router
+             - @templating
+             - @hip_mandrill.dispatcher
+             - @wrep.hip_mandrill.message
+             - @twig
              - { confirmation.template: %fos_user.registration.confirmation.template%, resetting_password.template: %fos_user.resetting.email.template% }
