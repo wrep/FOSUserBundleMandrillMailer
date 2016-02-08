@@ -82,13 +82,14 @@ class FOSUserBundleMailerTwig implements MailerInterface
     {
         $template = $this->parameters['confirmation.template'];
 
-        $url = $this->router->generate('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), true);
-        $rendered = $this->templating->render($template, array(
-                'confirmationUrl' =>  $url,
-                'user' => $user
-        ));
+        $url = $this->router->generate('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), UrlGeneratorInterface::ABSOLUTE_URL);
 
-        $this->sendEmailMessage($rendered, $user->getEmail());
+        $context = array(
+            'user' => $user,
+            'confirmationUrl' => $url
+        );
+
+        $this->sendMessage($template, $context, $user->getEmail());
     }
 
     /**
