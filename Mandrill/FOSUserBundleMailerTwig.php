@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface,
     Symfony\Component\Routing\RouterInterface,
     FOS\UserBundle\Model\UserInterface,
     FOS\UserBundle\Mailer\MailerInterface,
+    Twig_Environment,
     Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
@@ -64,7 +65,7 @@ class FOSUserBundleMailerTwig implements MailerInterface
      * @param Message             $message
      * @param array              $parameters
      */
-    public function __construct(RouterInterface $router, EngineInterface $templating, $dispatcher, $message, \Twig_Environment $twig, array $parameters)
+    public function __construct(RouterInterface $router, EngineInterface $templating, $dispatcher, $message, Twig_Environment $twig, array $parameters)
     {
         $this->router = $router;
         $this->templating = $templating;
