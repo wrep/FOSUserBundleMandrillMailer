@@ -159,11 +159,10 @@ class FOSUserBundleMailerTwig implements MailerInterface
         // $this->message->setFromEmail($fromEmail);
         $this->message->setSubject($subject);
         $this->message->setTrackClicks(false);
+        $this->message->setText($textBody);
 
         if (!empty($htmlBody)) {
             $this->message->setHtml($htmlBody);
-        } else {
-            $this->message->setText($textBody);
         }
 
         $this->dispatcher->send($this->message);
